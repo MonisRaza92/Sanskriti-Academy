@@ -1,0 +1,168 @@
+
+.admin-sidebar{
+    background-color: var(--light-color);
+    padding: 20px 10px;
+    border: 1px solid var(--background-color);
+    border-radius: 5px;
+    position: relative;
+}
+.admin-sidebar .sidebar-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 30px 20px;
+}
+.admin-sidebar .sidebar-header h3{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark-color);
+    margin: 10px 0;
+}
+.sidebar-header .admin-info{
+    text-align: center;
+}
+.admin-sidebar .sidebar-header img{
+    width: 100px;
+
+}
+.admin-sidebar .sidebar-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.admin-sidebar .sidebar-menu ul li{
+    border-radius: 5px;
+    margin: 7px;
+}
+.admin-sidebar .sidebar-menu ul li a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    color: var(--dark-color);
+    font-weight: 600;
+    padding: 10px 10px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+.admin-sidebar .sidebar-menu ul li a::after{
+    content: '+';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    font-size: 25px;
+    transform: translateY(-50%);
+}
+.admin-content .dashboard-cards .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+    padding: 20px; 
+    border-radius: 5px!important;
+}
+.admin-content .dashboard-cards a{
+    text-decoration: none;
+}
+.admin-content .dashboard-cards h3{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+.admin-content .dashboard-cards .card p{
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+.user-table-heading{
+    border: 1px solid var(--background-color);
+    padding: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: var(--background-color);
+}
+.admin-user-table {
+    overflow-x: auto!important;
+    overflow-y: auto!important;
+    border: 1px solid var(--background-color);
+}
+.admin-user-table table {
+    min-width: 1000px!important;
+}
+.upload-course-form{
+    border: 1px solid var(--background-color);
+    padding: 20px;
+}
+
+.upload-course-heading{
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid var(--background-color);
+    background-color: var(--background-color);
+}
+.uploaded-course-heading{
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid var(--background-color);
+    background-color: var(--background-color);
+}
+@media screen and (max-width: 988px) {
+    .admin-sidebar {
+        border: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        border-right: 1px solid var(--background-color);
+        z-index: 100000;
+        padding-top: 20px;
+        transform: translateX(-110%);
+        transition: all 0.5s ease;
+    }
+    .admin-sidebar-active {
+        transform: translateX(0)!important;
+    }
+    .admin-sidebar .sidebar-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+    .admin-sidebar .sidebar-header img {
+        width:50px;
+        margin-top: -10px;
+    }
+    .admin-sidebar .sidebar-header .admin-info {
+        text-align: left;
+    }
+    .admin-sidebar .sidebar-menu ul li{
+        margin: 10px 0;
+    }
+    .sidebar-header .admin-info h3 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .sidebar-header .admin-info p {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--dark-color);
+    }
+    .dashboard-cards div{
+        padding: 0 0 0 10px!important;
+    }
+    .dashboard-cards .card {
+        padding-top: 15px!important;
+    }
+    
+    
+}

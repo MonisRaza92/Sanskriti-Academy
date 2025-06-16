@@ -1,0 +1,64 @@
+@import 'partials-css/navbar.css';
+@import 'partials-css/hero-section.css';
+@import 'partials-css/about.css';
+@import 'partials-css/why-choose-us.css';
+@import 'partials-css/courses-features.css';
+@import 'partials-css/result-sectio.css';
+@import 'partials-css/teachers.css';
+@import 'partials-css/FAQ.css';
+@import 'partials-css/footer.css';
+@import 'partials-css/auth.css';
+@import 'partials-css/account.css';
+@import 'partials-css/classes.css';
+@import 'partials-css/resources.css';
+@import 'partials-css/admin.css';
+@import 'partials-css/course.css';
+@import 'partials-css/blogs.css';
+
+
+:root{
+     --background-color:#e2e2e2;
+     --light-color:#ffffff;
+     --dark-color:#000000;
+     --accent-color:#920000;
+     --nav-height: 45px;
+}
+@font-face{
+     font-family: default;
+     src: url(../assets/fonts/CalSans-Regular.woff);
+     font-weight: 400;
+}
+body{
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: default;
+     font-weight: 400;
+     background-color: var(--light-color)!important;
+}
+
+/* FAQ Accordion Custom Styling */
+.accordion-button:not(.collapsed) {
+    color: #ffffff !important;
+    background-color: #920000 !important;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button:focus {
+    border-color: #920000;
+    box-shadow: 0 0 0 0.25rem rgba(146, 0, 0, 0.25);
+}
+
+.accordion-button.collapsed:hover {
+    background-color: rgba(146, 0, 0, 0.05);
+}
+
+.accordion-button::after {
+    color: #920000;
+}
+
+.accordion-button:not(.collapsed)::after {
+    color: #ffffff;
+    filter: brightness(0) invert(1);
+}

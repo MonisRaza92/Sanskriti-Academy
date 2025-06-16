@@ -1,0 +1,36 @@
+.heading{
+     font-size: 40px;
+     font-weight: 800;
+     padding-bottom: 20px;
+     text-transform: uppercase;
+}
+.why-sanskriti{
+     padding-bottom: 40px;
+}
+.why-sanskriti .feature-box {
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.why-sanskriti .icon {
+  font-size: 30px;
+  color: var(--accent-color);
+  margin-top: 4px;
+  min-width: 35px;
+}
+
+.why-sanskriti h5 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.why-sanskriti p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+}
+@media(max-width: 766px){
+     .heading{
+          font-size: 28px;
+     }
+}

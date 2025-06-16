@@ -1,0 +1,73 @@
+.sanskrit-section{
+     text-align: center;
+}
+.sanskrit-section h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sanskrit-card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--background-color);
+}
+
+.sanskrit-card:hover {
+  transform: translateY(-5px);
+}
+
+.sanskrit-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-content p {
+  color: #555;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: left;
+}
+
+.counter-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid var(--background-color);
+}
+
+.counter-card h3 {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
+.counter-card p {
+  margin: 0;
+  font-weight: 500;
+  color: #444;
+}
+@media (max-width:766px){
+     .sanskrit-section{
+          text-align: left;
+     }
+     .sanskrit-section h2{
+          font-size: 28px;
+     }
+     .counter-card p {
+          font-size: 14px;
+     }
+}
