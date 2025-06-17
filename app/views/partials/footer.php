@@ -46,7 +46,7 @@
 
     <hr class="border-light mt-4">
     <div class="text-center small justify-content-between d-flex">
-      <span><strong>© 2025 Sanskriti Academy. </strong>All Rights Reserved.</span> <span> Design & Developed by <strong><a style="color:white;text-decoration:none;" href="https://wa.me/message/I64PWTBTVS62J1">ARZAQ INSIGHTS.</a></strong></span>
+      <span><strong>© 2025 Sanskriti Academy. </strong>All Rights Reserved. <a class="text-white ps-2 footer-link" href="?url=privacy-policy">Privacy Policy</a> <a class="ps-2 text-white footer-link" href="?url=terms-and-conditions">Terms & Conditions</a></span> <span> Design & Developed by <strong><a style="color:white;text-decoration:none;" href="https://wa.me/message/I64PWTBTVS62J1">ARZAQ INSIGHTS.</a></strong></span>
     </div>
   </div>
 </footer>

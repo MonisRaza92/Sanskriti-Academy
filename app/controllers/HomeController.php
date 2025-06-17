@@ -23,12 +23,14 @@ class HomeController
         $courses = $coursesModel->getAllCourses();
 
         $this->view('courses', ['courses' => $courses]);
-        exit();   
-    }
-
-    public function about()
-    {
-        require_once __DIR__ . '/../views/about.php';
         exit();
+    }
+    public function privacyPolicy()
+    {
+        $this->view('privacy-policy');
+    }
+    public function termsAndConditions()
+    {
+        $this->view('term-and-conditions');
     }
 }

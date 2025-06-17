@@ -8,6 +8,8 @@ include_once __DIR__ . '/../core/Mailer.php';
 $routes = [
     '' => 'HomeController@index',
     'courses' => 'HomeController@courses',
+    'privacy-policy' => 'HomeController@privacyPolicy', 
+    'terms-and-conditions' => 'HomeController@termsAndConditions',
     'login' => 'AuthController@showLoginForm',
     'signup' => 'AuthController@showSignupForm',
     'loginSubmit' => 'AuthController@handleLogin',
