@@ -25,6 +25,8 @@
           <li><a href="?url=courses" class="footer-link fw-light small">COURSES</a></li>
           <li><a href="#footer" class="footer-link fw-light small">CONTACT</a></li>
           <li><a href="?url=blog" class="footer-link fw-light small">BLOGS</a></li>
+          <li><a href="?url=privacy-policy" class="footer-link fw-light small">PRIVACY POLICY</a></li>
+          <li><a href="?url=terms-and-conditions" class="footer-link fw-light small">TERMS & CONDITIONS</a></li>
         </ul>
       </div>
 
@@ -45,8 +47,8 @@
     </div>
 
     <hr class="border-light mt-4">
-    <div class="text-center small justify-content-between d-flex">
-      <span><strong>© 2025 Sanskriti Academy. </strong>All Rights Reserved. <a class="text-white ps-2 footer-link" href="?url=privacy-policy">Privacy Policy</a> <a class="ps-2 text-white footer-link" href="?url=terms-and-conditions">Terms & Conditions</a></span> <span> Design & Developed by <strong><a style="color:white;text-decoration:none;" href="https://wa.me/message/I64PWTBTVS62J1">ARZAQ INSIGHTS.</a></strong></span>
+    <div class="text-center small">
+      <strong>© 2025 Sanskriti Academy </strong>All Rights Reserved. || Design & Developed by <strong><a style="color:white;text-decoration:none;" href="https://wa.me/message/I64PWTBTVS62J1">ARZAQ INSIGHTS.</a></strong>
     </div>
   </div>
 </footer>
