@@ -82,46 +82,51 @@ class CourseController
     public function updateCourse()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $filePath = $_POST['existing_file']; // If no new file uploaded
+            $id = $_POST['id'];
+
+            // Fetch existing course data
+            $existing = $this->model->getCourseById($id);
+
+            // Only update fields present in POST, otherwise keep old value
+            $data = [
+                'id' => $id,
+                'course_name' => isset($_POST['course_name']) ? $_POST['course_name'] : $existing['course_name'],
+                'description' => isset($_POST['description']) ? $_POST['description'] : $existing['description'],
+                'file_path' => $existing['file_path'],
+                'file_type' => isset($_POST['file_type']) ? $_POST['file_type'] : $existing['file_type'],
+                'price' => isset($_POST['price']) ? $_POST['price'] : $existing['price'],
+                'teacher_name' => isset($_POST['teacher_name']) ? $_POST['teacher_name'] : $existing['teacher_name'],
+                'category' => isset($_POST['category']) ? $_POST['category'] : $existing['category'],
+                'class' => isset($_POST['class']) ? $_POST['class'] : $existing['class'],
+                'thumbnail' => $existing['thumbnail']
+            ];
+
+            // Handle file upload if new file is uploaded
             if (isset($_FILES['course_file']) && $_FILES['course_file']['error'] === 0) {
-                $uploadDir =__DIR__. '/../../public/uploads/courses/';
+                $uploadDir = __DIR__ . '/../../public/uploads/courses/';
                 if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
                 $fileName = time() . '_' . basename($_FILES['course_file']['name']);
-                $targetPath = $uploadDir . $fileName;
+                $targetPath = "{$uploadDir}{$fileName}";
                 if (move_uploaded_file($_FILES['course_file']['tmp_name'], $targetPath)) {
-                    $filePath = 'public/uploads/courses/' . $fileName;
+                    $data['file_path'] = "public/uploads/courses/{$fileName}";
                 }
             }
-            // Thumbnail upload handling
-            $thumbnailPath = $_POST['existing_thumbnail']; // If no new thumbnail uploaded  
+
+            // Handle thumbnail upload if new thumbnail is uploaded
             if (isset($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] === 0) {
                 $uploadDir = __DIR__ . '/../../public/uploads/courses/thumbnails/';
                 if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
                 $fileName = time() . '_' . basename($_FILES['thumbnail']['name']);
-                $targetPath = $uploadDir . $fileName;
+                $targetPath = "{$uploadDir}{$fileName}";
                 if (move_uploaded_file($_FILES['thumbnail']['tmp_name'], $targetPath)) {
-                    $thumbnailPath = 'public/uploads/courses/thumbnails/' . $fileName;
+                    $data['thumbnail'] = "public/uploads/courses/thumbnails/{$fileName}";
                 }
             }
 
-            $data = [
-                'id' => $_POST['id'],
-                'course_name' => $_POST['course_name'],
-                'description' => $_POST['description'],
-                'file_path' => $filePath,
-                'file_type' => $_POST['file_type'],
-                'price' => $_POST['price'],
-                'teacher_name' => $_POST['teacher_name'],
-                'category' => $_POST['category'],
-                'class' => $_POST['class'],
-                'thumbnail' => $thumbnailPath
-            ];
-
             $this->model->updateCourse($data);
-            header("Location: ?url=updateCourses");
+            header("Location: ?url=adminCourses");
             exit;
         } else {
-            $course = $this->model->getCourseById($_GET['id']);
             require_once 'app/views/admin/update_course.php';
         }
     }

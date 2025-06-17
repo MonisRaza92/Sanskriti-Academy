@@ -60,7 +60,7 @@
         <p>We reserve the right to update or modify these Terms & Conditions at any time without prior notice.</p>
 
         <h6>11. Governing Law</h6>
-        <p>These Terms are governed by the laws of India. All disputes shall be subject to the jurisdiction of the courts in [Your City], India.</p>
+        <p>These Terms are governed by the laws of India. All disputes shall be subject to the jurisdiction of the courts in New Delhi, India.</p>
 
 
     </div>

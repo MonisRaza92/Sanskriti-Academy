@@ -48,7 +48,7 @@ class CourseModel
                     price = :price,
                     teacher_name = :teacher_name,
                     category = :category,
-                    class = :class
+                    class = :class,
                     thumbnail = :thumbnail
                   WHERE id = :id";
 

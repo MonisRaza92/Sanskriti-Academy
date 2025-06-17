@@ -10,9 +10,9 @@
             <?php endif; ?>
         </div>
         <div class="row">
-            <?php 
+            <?php
             $counter = 0;
-            foreach ($courses as $course): 
+            foreach ($courses as $course):
                 // Skip after 3 cards if not on courses page
                 if (!isset($_GET['url']) || $_GET['url'] !== 'courses') {
                     if ($counter >= 3) continue;
@@ -41,57 +41,58 @@
                     </div>
 
                     <!-- Popup Modal -->
-                    <div class="modal fade mt-5" id="courseModal<?= $course['id'] ?>" tabindex="-1" aria-labelledby="courseModalLabel<?= $course['id'] ?>" aria-hidden="true">
-                      <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="courseModalLabel<?= $course['id'] ?>"><?= htmlspecialchars($course['course_name']) ?></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <div class="row">
-                              <div class="col-md-5">
-                                <?php if (!empty($course['thumbnail']) && (isset($course['file_type']) && $course['file_type'] === 'pdf')): ?>
-                                    <img src="<?php echo base_url(htmlspecialchars($course['thumbnail'])); ?>" alt="Course Thumbnail" class="img-fluid mb-3">
-                                <?php endif; ?>
-                                <?php if (!empty($course['file_path'])): ?>
-                                    <?php if ($course['file_type'] === 'pdf'): ?>
-                                        <a href="<?= base_url(htmlspecialchars($course['file_path'])) ?>" class="btn btn-outline-primary" download>Download PDF</a>
-                                    <?php elseif ($course['file_type'] === 'video'): ?>
-                                        <video controls width="100%">
-                                            <source src="<?= base_url(htmlspecialchars($course['file_path'])) ?>" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    <?php endif; ?>
-                                <?php endif; ?>
-                              </div>
-                              <div class="col-md-7">
-                                <p><strong>Category:</strong> <?= htmlspecialchars($course['category']) ?></p>
-                                <p><strong>Class:</strong> <?= htmlspecialchars($course['class']) ?></p>
-                                <p><strong>Teacher:</strong> <?= htmlspecialchars($course['teacher_name']) ?></p>
-                                <p><strong>Price:</strong> ₹ <?= htmlspecialchars($course['price']) ?></p>
-                                <p><strong>Description:</strong><br><?= nl2br(htmlspecialchars($course['description'])) ?></p>
-                              </div>
+                    <div class="modal fade mt-5 mb-5 pb-5 pt-4" id="courseModal<?= $course['id'] ?>" tabindex="-1" aria-labelledby="courseModalLabel<?= $course['id'] ?>" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="courseModalLabel<?= $course['id'] ?>"><?= htmlspecialchars($course['course_name']) ?></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <?php if (!empty($course['thumbnail']) && (isset($course['file_type']) && $course['file_type'] === 'pdf')): ?>
+                                                <img src="<?php echo base_url(htmlspecialchars($course['thumbnail'])); ?>" alt="Course Thumbnail" class="img-fluid mb-3">
+                                            <?php endif; ?>
+                                            <?php if (!empty($course['file_path'])): ?>
+                                                <?php if ($course['file_type'] === 'pdf'): ?>
+                                                    <a href="<?= base_url(htmlspecialchars($course['file_path'])) ?>" class="btn btn-primary w-100" download>BUY NOW</a>
+                                                <?php elseif ($course['file_type'] === 'video'): ?>
+                                                    <video controls width="100%">
+                                                        <source src="<?= base_url(htmlspecialchars($course['file_path'])) ?>" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                    <button class="btn btn-primary w-100">BUY NOW</button>
+                                                    <?php endif; ?>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p><strong>Category:</strong> <?= htmlspecialchars($course['category']) ?></p>
+                                            <p><strong>Class:</strong> <?= htmlspecialchars($course['class']) ?></p>
+                                            <p><strong>Teacher:</strong> <?= htmlspecialchars($course['teacher_name']) ?></p>
+                                            <p><strong>Price:</strong> ₹ <?= htmlspecialchars($course['price']) ?></p>
+                                            <p><strong>Description:</strong><br><?= nl2br(htmlspecialchars($course['description'])) ?></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
 
                     <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        var card = document.querySelector('[data-course-id="<?= $course['id'] ?>"]');
-                        if(card) {
-                            card.addEventListener('click', function() {
-                                var modal = new bootstrap.Modal(document.getElementById('courseModal<?= $course['id'] ?>'));
-                                modal.show();
-                            });
-                        }
-                    });
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var card = document.querySelector('[data-course-id="<?= $course['id'] ?>"]');
+                            if (card) {
+                                card.addEventListener('click', function() {
+                                    var modal = new bootstrap.Modal(document.getElementById('courseModal<?= $course['id'] ?>'));
+                                    modal.show();
+                                });
+                            }
+                        });
                     </script>
                 </div>
             <?php endforeach; ?>
-            
+
             <?php if ((!isset($_GET['url']) || $_GET['url'] !== 'courses') && count($courses) > 3): ?>
                 <div class="col-12 text-center mt-4">
                     <a href="?url=courses" class="btn">View All Courses</a>
