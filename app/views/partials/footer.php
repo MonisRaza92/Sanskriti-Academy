@@ -24,7 +24,7 @@
           <li><a href="#about" class="footer-link fw-light small">ABOUT</a></li>
           <li><a href="?url=courses" class="footer-link fw-light small">COURSES</a></li>
           <li><a href="#footer" class="footer-link fw-light small">CONTACT</a></li>
-          <li><a href="?url=blog" class="footer-link fw-light small">BLOGS</a></li>
+          <li><a href="?url=blogs" class="footer-link fw-light small">BLOGS</a></li>
           <li><a href="?url=privacy-policy" class="footer-link fw-light small">PRIVACY POLICY</a></li>
           <li><a href="?url=terms-and-conditions" class="footer-link fw-light small">TERMS & CONDITIONS</a></li>
         </ul>
