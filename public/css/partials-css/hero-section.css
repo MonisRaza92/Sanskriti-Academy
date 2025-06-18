@@ -1,0 +1,170 @@
+.hero-section {
+  padding-bottom: 50px;
+  padding-top: 120px;
+  overflow: hidden;
+}
+.hero-content {
+  position: relative;
+}
+.hero-content h2 {
+  display: none;
+  font-size: 14px;
+  border-radius: 5px;
+  color: var(--dark-color);
+  padding: 8px 10px 8px 50px;
+  position: relative;
+  width: fit-content;
+  z-index: 2;
+}
+.hero-content h2::after {
+  content: "NEW";
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  border-radius: 4px;
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  padding: 5px 6px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.hero-content .cap{
+  position: absolute;
+  top: -20px;
+  right: 15px;
+  width: 100px;
+  transform: rotate(40deg);
+}
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--dark-color);
+  padding-top: 0px;
+}
+.hero-content p {
+  color: var(--dark-color);
+  max-width: 450px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.default-btn-accent {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  margin-right: 10px;
+}
+.default-btn-light {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color)!important;
+  background-color: var(--light-color);
+}
+.facilities {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  margin-top: 30px;
+}
+.facilities h5 {
+  color: var(--dark-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.courses-line {
+  position: relative;
+  padding: 20px 20px 10px 20px!important;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  background-color: var(--background-color);
+  border-radius: 10px!important;
+  margin-top: 50px! important;
+}
+.courses-line .slider{
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  gap: 20px;
+
+}
+.courses-line .line {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+  animation: slide 10s infinite linear;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.courses-line .line h5 {
+  border-radius: 5px;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  font-weight: 600;
+  padding: 10px 20px;
+}
+@media (max-width: 988px) {
+  .hero-section {
+    padding-top: 100px;
+  }
+  .hero-content h1 {
+    font-size: 35px;
+    margin-top: 20px;
+  }
+  .hero-content p {
+    font-size: 15px;
+    max-width: 350px;
+  }
+  .default-btn-accent,
+  .default-btn-light {
+    width: 100% !important;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .facilities {
+    text-align: center;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+  .facilities h5 {
+    font-size: 16px;
+  }
+  .carousel-container {
+    padding-top: 10px;
+  }
+  .hero-img{
+    margin-top: 50px! important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .hero-img img {
+    width: 95%;
+    height: auto;
+  }
+  .hero-content .cap{
+    width: 80px;
+    right: 5px;
+    top: 0px;
+  }
+}

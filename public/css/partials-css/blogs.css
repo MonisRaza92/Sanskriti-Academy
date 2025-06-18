@@ -1,0 +1,78 @@
+
+    .blog-card {
+        transition: transform 0.3s ease;
+        border: none;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .blog-card .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .blog-meta {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+
+    .blog-tags .badge {
+        margin: 0.2rem;
+        font-weight: normal;
+        color: var(--theme-color);
+        border: 1px solid var(--accent-color);
+    }
+
+    .card-title {
+        color: var(--accent-color);
+        font-weight: 600;
+    }
+
+    .card-text {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .btn-theme {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-theme:hover {
+        background-color: grey;       
+        color: white;
+        transform: translateX(5px);
+    }
+
+    /* Override any bootstrap theme colors */
+    .text-primary {
+        color: var(--accent-color) !important;
+    }
+
+    .bg-primary {
+        background-color: var(--accent-color) !important;
+    }
+
+    .btn-primary {
+        background-color: var(--accent-color) !important;
+        border-color: var(--accent-color) !important;
+    }
+
+    .btn-primary:hover {
+        background-color: grey !important;
+        border-color: grey !important;
+    }
+
+    .btn-outline-primary {
+        color: var(--accent-color) !important;
+        border-color: var(--accent-color) !important;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: var(--accent-color) !important;
+        color: white !important;
+    }

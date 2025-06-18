@@ -1,0 +1,159 @@
+.user-tabs-background{
+     padding-top: 80px;
+     padding-bottom: 20px;
+}
+.user-tabs{
+     background-color: var(--light-color);
+     border-radius: 5px;
+     border: 1px solid var(--background-color);
+}
+.profile-overview{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     gap: 20px;
+}
+.profile-overview img{
+     border-radius: 100%;
+     width: 130px;
+     height: 130px;
+     object-fit: contain;
+     border: 2px solid var(--accent-color);
+     padding: 2px;
+     object-position: centre;
+}
+.profile-text h3{
+     font-weight: 800;
+     font-size: 25px;
+     line-height: 20px;
+}
+.profile-text h6{
+     color: grey;
+     font-size: 12px;
+}
+#updateProfile{
+     border: none;
+     padding: 5px 30px;
+     border-radius: 10px;
+     font-weight: 700;
+     background-color: var(--accent-color);
+     color: var(--light-color);
+     margin-top: 10px;
+}
+.tab-list{
+     padding-top: 30px;
+}
+.tab-list ul{
+     padding: 0;
+     margin: 0;
+     list-style: none;
+}
+.tab-list ul li{
+     font-size: 18px;
+     padding: 10px 15px;
+     font-weight: 600;
+     transition: all ease .3s;
+     position: relative;
+     margin: 10px 0!important;
+     border-radius: 5px;
+}
+.tab-list ul li::after{
+     content: "+";
+     position: absolute;
+     right: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     transition: all ease .3s;
+}
+.tab-list ul li i{
+     margin-right: 20px;
+     padding-top: 5px;
+}
+.active-li{
+     background-color: #f1e9e9!important;
+     color: var(--accent-color)!important;
+     border-right: 4px solid var(--accent-color);
+}
+#userInfoPage{
+     padding: 0 20px;
+}
+.user-info-update{
+     border: 1px solid var(--background-color);
+     border-radius: 5px;
+     padding: 20px;
+}
+.info-update-heading{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0px 10px;
+}
+.user-info-update form button{
+     width: 100%;
+     padding: 10px 0;
+     border-radius: 5px;
+     font-weight: 700;
+     background-color: var(--accent-color);
+     color: var(--light-color);
+     border: none;
+     margin-top: 20px;
+}
+@media(max-width:988px){
+     .user-tabs{
+          margin-bottom: 20px;
+          border: none;
+     }
+     .profile-overview{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          text-align: left;
+          gap: 20px;
+     }
+     .profile-overview img{
+          border-radius: 100%;
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+          border: 2px solid var(--accent-color);
+          padding: 2px;
+          object-position: centre;
+          margin-top: 5px!important;
+     }
+     .profile-text h3{
+          font-weight: 800;
+          font-size: 20px;
+     }
+     .profile-text h6{
+          color: grey;
+          font-size: 16px;
+     }
+     .tab-list ul li{
+          margin: 20px 0!important;
+     }
+     #userInfoPage{
+          position: fixed;
+          top: 80px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 95%;
+          background-color: var(--light-color);
+          box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+          z-index: 9999;
+          border-radius: 10px;
+     }
+     .user-info-update{
+          border: none;
+          padding:20px 0px 40px 0!important;
+     }
+     .info-update-heading button{
+          font-size: 40px;
+          font-weight: 700;
+          background-color: transparent;
+          color: var(--dark-color);
+          border: none;
+          cursor: pointer;
+          margin: -10px -10px 0px 0px!important;
+     }
+}

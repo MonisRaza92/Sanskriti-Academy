@@ -1,0 +1,73 @@
+.courses-heading .heading{
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark-color);
+  text-align: left;
+  margin: 5px 0;
+}
+.course-card {
+  border: 2px solid var(--background-color);
+  background-color: var(--light-color);
+  transition: 0.3s ease;
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+  max-height: 500px;
+}
+.course-card img {
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+.course-card-content {
+  padding: 20px;
+}
+.course-card-content .badge1 {
+  color: var(--dark-color);
+  background-color: var(--background-color);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.course-card-content .badge2 {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.course-card-content .course-heading{
+    border-bottom: 2px solid var(--background-color);
+}
+.course-card-content h3 {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--dark-color);
+  margin: 20px 0 0 0;
+}
+.course-card-content .card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.card-bottom h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+.card-bottom button {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
