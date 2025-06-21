@@ -14,6 +14,7 @@
           <?php include __DIR__ . '/admin/admin-partials/admin-sidebar.php'; ?>
      </div>
      <?php include __DIR__ . '/partials/hero-section.php'; ?>
+     <?php include __DIR__ . '/partials/events.php'; ?>
      <?php include __DIR__ . '/partials/classes.php'; ?>
      <?php include __DIR__ . '/partials/about.php'; ?>
      <?php include __DIR__ . '/partials/why-choose-us.php'; ?>

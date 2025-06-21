@@ -4,7 +4,7 @@
 
       <!-- Logo & About -->
       <div class="col-lg-4 col-md-6 mb-4">
-        <img src="assets/images/Logos/logo.png" alt="Sanskriti Academy Logo" class="footer-logo mb-3">
+        <img src="assets/images/Logos/header-logo.jpg" alt="Sanskriti Academy Logo" class="footer-logo mb-3">
         <p>
           Sanskriti Academy is dedicated to delivering top-quality education in Commerce and Arts. We focus on result-oriented teaching with expert faculty.
         </p>
@@ -20,13 +20,13 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <h5 class="mb-3">Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="footer-link fw-light small">HOME</a></li>
-          <li><a href="#about" class="footer-link fw-light small">ABOUT</a></li>
-          <li><a href="?url=courses" class="footer-link fw-light small">COURSES</a></li>
-          <li><a href="#footer" class="footer-link fw-light small">CONTACT</a></li>
-          <li><a href="?url=blogs" class="footer-link fw-light small">BLOGS</a></li>
-          <li><a href="?url=privacy-policy" class="footer-link fw-light small">PRIVACY POLICY</a></li>
-          <li><a href="?url=terms-and-conditions" class="footer-link fw-light small">TERMS & CONDITIONS</a></li>
+          <li><a href="#" class="footer-link fw-medium small">HOME</a></li>
+          <li><a href="#about" class="footer-link fw-medium small">ABOUT</a></li>
+          <li><a href="?url=courses" class="footer-link fw-medium small">COURSES</a></li>
+          <li><a href="#footer" class="footer-link fw-medium small">CONTACT</a></li>
+          <li><a href="?url=blogs" class="footer-link fw-medium small">BLOGS</a></li>
+          <li><a href="?url=privacy-policy" class="footer-link fw-medium small">PRIVACY POLICY</a></li>
+          <li><a href="?url=terms-and-conditions" class="footer-link fw-medium small">TERMS & CONDITIONS</a></li>
         </ul>
       </div>
 

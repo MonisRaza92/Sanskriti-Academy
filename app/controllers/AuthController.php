@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../models/AuthModel.php';
 require_once __DIR__ . '/../models/CoursesModel.php';
+require_once __DIR__ . '/../models/BlogModel.php';
+require_once __DIR__ . '/../models/TestModel.php';
 
 class AuthController
 {
@@ -18,15 +20,16 @@ class AuthController
      public function handleLogin()
      {
           if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-               $email = $_POST['email'];
+               $identifier = $_POST['email']; // can be email or number
                $password = $_POST['password'];
 
                include_once __DIR__ . '/../../core/database.php';
                $db = new Database();
-               $conn = $db->connect();
-               $query = "SELECT * FROM users WHERE email = :email LIMIT 1";
+               $conn = $db->conn;
+
+               $query = "SELECT * FROM users WHERE email = :identifier OR number = :identifier LIMIT 1";
                $stmt = $conn->prepare($query);
-               $stmt->bindParam(":email", $email);
+               $stmt->bindParam(":identifier", $identifier);
                $stmt->execute();
                $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -66,6 +69,24 @@ class AuthController
                $course = $_POST['course'];
                $dob = $_POST['dob'];
                $role = 'user';
+
+
+               // ---------------- OTP CHECK START --------------------
+
+               $userOtp = isset($_POST['otp']) ? $_POST['otp'] : '';
+               $sessionOtp = isset($_SESSION['signup_otp']) ? $_SESSION['signup_otp'] : '';
+               $sessionNumber = isset($_SESSION['signup_number']) ? $_SESSION['signup_number'] : '';
+
+               if ($userOtp != $sessionOtp) {
+                    echo "Invalid OTP!";
+                    return;
+               }
+
+               if ($number != $sessionNumber) {
+                    echo "Phone number mismatch!";
+                    return;
+               }
+               // ---------------- OTP CHECK END --------------------
 
                if (empty($number)) {
                     echo "Please provide a phone number.";
@@ -130,6 +151,30 @@ class AuthController
           } else {
                echo "Invalid request method.";
           }
+     }
+     public function sendOtp()
+     {
+          $number = $_POST['number'] ?? '';
+
+          if (strlen($number) != 10) {
+               echo "Invalid Number";
+               return;
+          }
+
+          $authModel = new AuthModel();
+          $otp = $authModel->generateOTP();
+
+          $_SESSION['signup_otp'] = $otp;
+          $_SESSION['signup_number'] = $number;
+
+          $message = "Welcome to Sunskriti Academy, Your OTP for signup is $otp. Do not share it with anyone.";
+
+          $smsResponse = $authModel->sendSms($number, $message);
+
+          // Debugging SMS API Response
+          error_log("SMS Response: " . $smsResponse);
+
+          echo "success";
      }
      public function updateDetails()
      {
@@ -225,6 +270,11 @@ class AuthController
           $courses = $courseModel->getAllCourses();
           $totalCourses = count($courses);
           $categories = ['Programming', 'Design', 'Marketing', 'Business', 'Science'];
+
+          $testModel = new TestModel();
+          $tests = $testModel->getAllTests();
+          $totalTests = count($tests);
+
 
           // Single view file me sab pass karo
           require __DIR__ . '/../views/admin/index.php';

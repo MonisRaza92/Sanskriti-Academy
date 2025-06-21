@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include __DIR__ . '/../partials/header-links.php'; ?>
+    <title>SANSKRITI ACADEMY - Delhi's Best Coaching Academy</title>
+</head>
+
+<body>
+    <?php include __DIR__ . '/../partials/navbar.php'; ?>
+    <div class="d-lg-none">
+        <?php include __DIR__ . '/../admin/admin-partials/admin-sidebar.php'; ?>
+    </div>
+    <div class="container mt-5 py-5">
+        <h3 class="fw-bold text-uppercase">Select Subject for Class <?php echo htmlspecialchars($_GET['class']); ?></h3>
+        <div class="row">
+        <?php foreach ($subjects as $subject): ?>
+    <div class="col-md-4 mb-1 mt-4">
+        <a href="?url=chapterSelect&class=<?php echo $class; ?>&test_name=<?php echo $test_name; ?>&subject=<?php echo $subject['subject']; ?>" style="text-decoration: none;">
+            <div class="card text-center border-2 rou rounded-2">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center" style="min-height: 120px;">
+                    <i class="fas fa-book fa-2x mb-3" style="color: #920000;"></i>
+                    <h5 class="card-title fw-semibold text-dark"><?php echo htmlspecialchars($subject['subject']); ?></h5>
+                </div>
+            </div>
+        </a>
+    </div>
+<?php endforeach; ?>
+
+        </div>
+    </div>
+    
+
+
+    <?php include __DIR__ . '/../partials/footer.php'; ?>
+
+    <?php include __DIR__ . '/../partials/footer-links.php'; ?>
+</body>
+
+</html>

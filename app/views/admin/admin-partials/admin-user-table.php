@@ -10,7 +10,6 @@
                 <th>City</th>
                 <th>Class</th>
                 <th>Course</th>
-                <th>Role</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,7 +24,6 @@
                         <td><?= htmlspecialchars($user['city']) ?></td>
                         <td><?= htmlspecialchars($user['class']) ?></td>
                         <td><?= htmlspecialchars($user['course']) ?></td>
-                        <td><?= htmlspecialchars($user['role']) ?></td>
                         <td>
                             <form method="post" action="?url=deleteUser" onsubmit="return confirm('Are you sure you want to delete this user?');" style="display:inline;">
                                 <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">

@@ -17,10 +17,10 @@
             </a>
         </div>
         <div class="col-md-3 col-6">
-            <a href="#">
+            <a href="?url=adminTests">
                 <div class="card">
-                    <h3>Resources</h3>
-                    <p><?php echo htmlspecialchars($totalResources ?? 0); ?>+</p>
+                    <h3>Tests</h3>
+                    <p><?php echo htmlspecialchars($totalTests ?? 0); ?>+</p>
                 </div>
             </a>
         </div>

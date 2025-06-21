@@ -6,8 +6,8 @@
                     <img class="cap" src="assets/images/Section/cap.png" alt="">
                     <h1>Sanskriti Academy <br> Trusted & Affordable Educational Platform</h1>
                     <p>A place where young minds are guided with care, knowledge, and values. Focused on building strong educational foundations through personalized attention and a nurturing environment.</p>
-                    <a class="default-btn-accent" href="#">REGISTER <i class="fa-solid fa-right-to-bracket"></i></a>
-                    <a class="default-btn-light" href="#about">LEARN MORE<i class="fa-solid fa-angles-right"></i></a>
+                    <a class="default-btn-accent" href="?url=login">REGISTER <i class="fa-solid fa-right-to-bracket"></i></a>
+                    <a class="default-btn-light" href="?url=tests">START TEST <i class="fa-solid fa-angles-right"></i></a>
                     <div class="facilities">
                          <h5><i class="fa-solid fa-video"></i> ONLINE</h5>
                          <h5><i class="fa-solid fa-users-rectangle"></i>

@@ -35,7 +35,11 @@
                             </div>
                             <div class="card-bottom">
                                 <h2>₹ <?= htmlspecialchars($course['price']) ?></h2>
-                                <button class="btn btn-primary">BUY NOW</button>
+                                <form method="POST" action="payment/initiate">
+                                    <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? '' ?>"> <!-- Dynamic user id -->
+                                    <input type="hidden" name="amount" value="<?= ((int)$course['price']) ?>"> <!-- Price in paisa -->
+                                    <button type="submit">Buy Now</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -56,14 +60,23 @@
                                             <?php endif; ?>
                                             <?php if (!empty($course['file_path'])): ?>
                                                 <?php if ($course['file_type'] === 'pdf'): ?>
-                                                    <button href="<?= base_url(htmlspecialchars($course['file_path'])) ?>" class="mb-3 btn btn-primary w-100" download>BUY NOW</button>
+                                                    <!-- <button href="<?= base_url(htmlspecialchars($course['file_path'])) ?>" class="mb-3 btn btn-primary w-100" download>BUY NOW</button> -->
+                                                    <form method="POST" action="payment/initiate">
+                                                        <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? '' ?>"> <!-- Dynamic user id -->
+                                                        <input type="hidden" name="amount" value="<?= ((int)$course['price'] * 100) ?>"> <!-- Price in paisa -->
+                                                        <button type="submit" class="w-100 btn btn-primary">Buy Now</button>
+                                                    </form>
                                                 <?php elseif ($course['file_type'] === 'video'): ?>
                                                     <video controls width="100%">
                                                         <source src="<?= base_url(htmlspecialchars($course['file_path'])) ?>" type="video/mp4">
                                                         Your browser does not support the video tag.
                                                     </video>
-                                                    <button class="btn btn-primary w-100">BUY NOW</button>
-                                                    <?php endif; ?>
+                                                    <form method="POST" action="payment/initiate">
+                                                        <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? '' ?>"> <!-- Dynamic user id -->
+                                                        <input type="hidden" name="amount" value="<?= ((int)$course['price'] * 100) ?>"> <!-- Price in paisa -->
+                                                        <button type="submit" class="w-100 btn btn-primary">Buy Now</button>
+                                                    </form>
+                                                <?php endif; ?>
                                             <?php endif; ?>
                                         </div>
                                         <div class="col-md-7">

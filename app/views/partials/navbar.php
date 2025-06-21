@@ -26,7 +26,6 @@
                         </a>
                     <?php else: ?>
                         <a class="btn me-2 <?php echo empty($courses) ? 'd-none' : ''; ?> <?php if (isset($_GET['url']) && $_GET['url'] === 'courses'): ?>d-none<?php endif; ?>" href="?url=courses">COURSES</a>
-                        <a class="btn me-2 <?php if (isset($_GET['url']) && $_GET['url'] === ''): ?>d-none<?php endif; ?>" href="?url=">HOME</a>
                         <a class="btn accountBtn" href="?url=account">
                             <img src="<?php echo htmlspecialchars($_SESSION['user']['profile_image'] ?? 'assets/images/Icons/user.webp'); ?>" alt="Profile Image" class="img-fluid">
                         </a>

@@ -50,12 +50,72 @@ class AuthModel
 
         return $stmt->execute();
     }
+    public function generateOTP()
+    {
+        return rand(100000, 999999);
+    }
+
+    // Real Fast2SMS Integration
+    public function sendSms($number, $otp)
+    {
+        $apiKey = 'YOUR_FAST2SMS_API_KEY'; // ✅ Apni real API key yahan lagao
+        $template_id = 'YOUR_TEMPLATE_ID'; // ✅ Fast2SMS me approved template ID
+        $url = "https://www.fast2sms.com/dev/bulkV2";
+
+        $fields = array(
+            "variables_values" => $otp,
+            "route" => "otp",
+            "numbers" => $number,
+            "sender_id" => "YOUR_SENDER_ID", // Optional but recommended
+            "message" => $template_id
+        );
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => json_encode($fields),
+            CURLOPT_HTTPHEADER => array(
+                "authorization: $apiKey",
+                "accept: */*",
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            return "cURL Error #:" . $err;
+        } else {
+            return $response;
+        }
+    }
+
 
     // Find user by email
     public function findByEmail($email)
     {
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(":email", $email);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function findByNumber($number)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM users WHERE number = :number");
+        $stmt->bindParam(":number", $number);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -92,19 +152,19 @@ class AuthModel
         return $stmt->execute();
     }
 
-     public function getAllUsers()
+    public function getAllUsers()
     {
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE role != 'admin' ORDER BY id DESC");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function getUserById($id)
+    public function getUserById($user_id)
     {
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE id = :id");
-        $stmt->bindParam(":id", $id);
-        $stmt->execute();
+        $stmt->execute(['id' => $user_id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
     public function deleteUser($id)
     {
         $stmt = $this->conn->prepare("DELETE FROM users WHERE id = :id");
