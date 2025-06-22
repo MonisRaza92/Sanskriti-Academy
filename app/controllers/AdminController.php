@@ -49,6 +49,23 @@ class AdminController
         $totalCompletedTests = count($completedTests);
         require_once __DIR__ . '/../views/admin/admin-results.php';
     }
+    public function adminResultsByTest()
+    {
+        $testModel = new TestModel();
+        $test_id = isset($_GET['test_id']) ? $_GET['test_id'] : null;
+        $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : null;
+        $testResults = [];
+
+        if ($test_id !== null) {
+            $testResults = $testModel->getResultsByTestId($test_id);
+        }
+        $testName = $testModel->getTestNameById($test_id);
+        $subjectAndChapter = $testModel->getSubjectAndChapterByTestId($test_id);
+
+
+
+        require_once __DIR__ . '/../views/admin/admin-results-by-test.php';
+    }
     public function adminEvents()
     {
         $eventModel = new EventModel();

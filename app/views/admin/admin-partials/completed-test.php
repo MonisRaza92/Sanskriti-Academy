@@ -11,43 +11,13 @@ if (isset($completedTests) && count($completedTests) > 0): ?>
                         <div>Test Name: <?= htmlspecialchars($test['test_name']) ?></div>
                     </div>
                     <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-success btn-sm fw-bold"><?= htmlspecialchars($test['status']) ?></button>
+                        <button type="submit" class="btn btn-success btn-sm fw-bold"><?= htmlspecialchars($test['status']) ?></button>
 
-                        <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#updateTestModal<?= $test['id'] ?>">
-                            Results
-                        </button>
-                    </div>
-                    <!-- Update Modal -->
-                    <div class="modal fade mt-5 py-5" id="updateTestModal<?= $test['id'] ?>" tabindex="-1" aria-labelledby="updateTestModalLabel<?= $test['id'] ?>" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form method="post" action="updateTest">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="updateTestModalLabel<?= $test['id'] ?>">Update Test</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <input type="hidden" name="test_id" value="<?= htmlspecialchars($test['id']) ?>">
-                                        <div class="mb-3">
-                                            <label for="update_class_<?= $test['id'] ?>" class="form-label">Class</label>
-                                            <input type="number" class="form-control" id="update_class_<?= $test['id'] ?>" name="class" value="<?= htmlspecialchars($test['class']) ?>" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="update_test_name_<?= $test['id'] ?>" class="form-label">Test Name</label>
-                                            <input type="text" class="form-control" id="update_test_name_<?= $test['id'] ?>" name="test_name" value="<?= htmlspecialchars($test['test_name']) ?>" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="update_chapter_<?= $test['id'] ?>" class="form-label">Chapter</label>
-                                            <input type="text" class="form-control" id="update_chapter_<?= $test['id'] ?>" name="chapter" value="<?= htmlspecialchars($test['chapter']) ?>" required>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-success">Update</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        <form action="?url=adminResultsByTest" method="GET">
+                            <input type="hidden" name="url" value="adminResultsByTest">
+                            <input type="hidden" name="test_id" value="<?= htmlspecialchars($test['id']) ?>">
+                            <button type="submit" class="btn btn-dark btn-sm">Results</button>
+                        </form>
                     </div>
                 </li>
             <?php endforeach ?>

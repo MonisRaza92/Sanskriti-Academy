@@ -137,6 +137,14 @@ class HomeController
         } else {
             $result = $testModel->getResult($user_id, $test_id);
             $data['result'] = $result;
+            $testResults = [];
+
+            if ($test_id !== null) {
+                $testResults = $testModel->getResultsByTestId($test_id);
+            }
+            $studentAnswers = $testModel->getStudentAnswers($user_id, $test_id);
+            $questions = $testModel->getQuestionByQuestionId($test_idRow['id']);
+            $allQuestions = $testModel->getAllQuestionsByTestId($test_idRow['id']);
             require_once __DIR__ . '/../views/test/result.php';
         }
     }

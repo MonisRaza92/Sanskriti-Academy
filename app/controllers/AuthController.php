@@ -272,7 +272,7 @@ class AuthController
           $categories = ['Programming', 'Design', 'Marketing', 'Business', 'Science'];
 
           $testModel = new TestModel();
-          $tests = $testModel->getAllTests();
+          $tests = $testModel->getAllLiveTests();
           $totalTests = count($tests);
 
 

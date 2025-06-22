@@ -39,6 +39,7 @@ $routes = [
     'admin/showCourses' => 'AuthController@showCourses',
     'adminTests' => 'AdminController@adminTests',
     'adminResults' => 'AdminController@adminResults',
+    'adminResultsByTest' => 'AdminController@adminResultsByTest',
     'adminEvents' => 'AdminController@adminEvents',
     'adminAddEvent' => 'AdminController@addEvent',
     'adminDeleteEvent' => 'AdminController@deleteEvent',

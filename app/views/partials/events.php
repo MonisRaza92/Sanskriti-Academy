@@ -1,6 +1,6 @@
 <div class="container <?php echo empty($events) ? 'd-none' : ''; ?>">
     <div class="row">
-        <div class="col-lg-8 col-12 mb-3 px-4">
+        <div class="col-lg-8 col-12 mb-3 px-4 ps-lg-3">
             <?php
             $sliderImages = [];
             if (!empty($events)) {
@@ -60,7 +60,7 @@
             <li class="list-group-item">No events found.</li>
             <?php endif; ?>
         </div>
-        <div class="col-lg-4 col-12 mb-5 px-4 px-lg-0">
+        <div class="col-lg-4 col-12 mb-5 px-4 px-lg-0 pe-lg-3">
             <div class="card" style="border: 2px solid #920000; height: 400px; overflow: hidden; scrollbar-width: none;">
                 <div class="card-header" style="background-color:var(--accent-color);">
                     <h5 class="mb-0 text-white text-uppercase ">Upcoming Events</h5>
